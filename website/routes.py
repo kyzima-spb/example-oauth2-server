@@ -90,8 +90,14 @@ def revoke_token():
     return authorization.create_endpoint_response('revocation')
 
 
+# @bp.route('/api/me')
+# @require_oauth('profile')
+# def api_me():
+#     user = current_token.user
+#     return jsonify(id=user.id, username=user.username)
+
+
 @bp.route('/api/me')
 @require_oauth('profile')
 def api_me():
-    user = current_token.user
-    return jsonify(id=user.id, username=user.username)
+    return jsonify('OK')
